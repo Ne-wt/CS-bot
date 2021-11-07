@@ -1,0 +1,19 @@
+{
+  "name": "cs-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo '> Initialising bot ...' && node bot.js",
+    "dev": "echo '> Initialising developer mode ...' && nodemon bot.js"
+  },
+  "keywords": [],
+  "author": "Tara Greenwood (Ne-wt)",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.14"
+  }
+}
