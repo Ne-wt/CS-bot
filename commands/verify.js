@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
         return;
     }
     // check channel is the verification channel
-    if (message.channel.id != process.env.VERIFICATION_CHANNEL_ID) {
+    if (message.channel.id == process.env.VERIFICATION_CHANNEL_ID) {
         // make sure they sent args
         if (!args[0]) {
             message.channel.send('Please provide an id to verify.');
