@@ -17,7 +17,6 @@ const env = require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
 const helpers = require("./helpers/helpers.js");
-const mysql = require('mysql');
 
 ////////////////////////////////////////
 
@@ -25,20 +24,6 @@ const mysql = require('mysql');
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
-
-// INNIT DB CONNECTION //
-const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-});
-
-connection.connect(err => {
-    if(err) throw err;
-    console.log('Connected to database!');
-});
-////////////////////////////////////////
 
 // fetch commands
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -53,6 +38,10 @@ for (const file of commandFiles) {
 // check if message is sent
 client.on("messageCreate", (message) => {
     if(message.author.bot) return;
+
+    if (message.channel.type == "DM") {
+        message.author.send("...");
+    }
 
     if(message.content.startsWith(process.env.PREFIX)) {
         processCommand(message);
