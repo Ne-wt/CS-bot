@@ -57,7 +57,7 @@ function processCommand(message) {
     const command = client.commands.get(primaryCommand);
 
 	if (!command) { 
-        message.channel.send(`Sorry, I don't understand that command. Try using \`${process.env.prefix}help\` !`);
+        message.channel.send(`Sorry, I don't understand that command. Try using \`${process.env.PREFIX}help\` !`);
         return;
     }
 
