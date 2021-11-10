@@ -44,6 +44,9 @@ exports.run = async (client, message, args) => {
                 // write the new file
                 fs.writeFileSync('students.txt', newFile);
 
+                // delete message
+                message.delete();
+
                 // and send a success message
                 return message.channel.send(`You have been verified!`);
             }
