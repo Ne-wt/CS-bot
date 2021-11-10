@@ -43,12 +43,11 @@ exports.run = async (client, message, args) => {
                 const newFile = file.replace(args[0] + '\n', args[0] + ' - verified by ' + message.author.id + ' (' + message.author.username + '#' + message.author.discriminator + ')\n');
                 // write the new file
                 fs.writeFileSync('students.txt', newFile);
-
-                // and send a success message
-                message.channel.send(`You have been verified!`);
-
+                var msgChannel = message.channel;
                 // delete message
-                return message.delete();
+                setTimeout(() => message.delete(), 10000);
+                // and send a success message
+                return msgChannel.send(`You have been verified!`);
             }
             // if not, send an error message
             else {
