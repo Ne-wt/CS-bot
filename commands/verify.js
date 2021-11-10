@@ -54,6 +54,10 @@ exports.run = async (client, message, args) => {
             }
         }
     }
+    else {
+        // if the channel is the verification channel, send an error message
+        return message.channel.send(`Please use the verification channel to verify yourself.`);
+    }
 }
 
 exports.help = {
