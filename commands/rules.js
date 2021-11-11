@@ -1,3 +1,5 @@
+const { Permissions } = require('discord.js');
+
 exports.run = async (client, message, args) => {
     // check if author is an admin
     if (message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
