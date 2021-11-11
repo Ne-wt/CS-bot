@@ -1,6 +1,6 @@
 exports.run = async (client, message, args) => {
     // check if author is an admin
-    if (message.member.hasPermission("ADMINISTRATOR")) {
+    if (message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
         message.channel.send(`
         Welcome!
         The following is a brief list of rules. Please note this list is not exhaustive, and moderators can add or remove rules as they see fit.
