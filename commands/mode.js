@@ -1,7 +1,7 @@
 const env = require('dotenv').config();
 
 exports.run = async (client, message, args) => {
-    message.reply(`Currently in: ${proccess.env.MODE} mode.`);
+    message.reply(`Currently in: ${process.env.MODE} mode.`);
 }
 
 exports.help = {
