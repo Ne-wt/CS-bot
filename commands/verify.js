@@ -62,5 +62,6 @@ exports.run = async (client, message, args) => {
 }
 
 exports.help = {
-    name: "verify"
+    name: "verify",
+    description: "Verifies a user is a first year.",
 }

@@ -24,5 +24,6 @@ exports.run = async (client, message, args) => {
 }
 
 exports.help = {
-    name: "rules"
+    name: "rules",
+    description: "Displays the server rules, admin only command.",
 }
